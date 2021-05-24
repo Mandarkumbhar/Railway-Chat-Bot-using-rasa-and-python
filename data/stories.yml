@@ -1,0 +1,168 @@
+version: "2.0"
+
+stories:
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: only greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: say
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+ 
+
+
+
+
+
+
+- story: ask for train info
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_train_info
+  - action: utter_ask_for_train_info
+  - action: set_info
+  - slot_was_set:
+      - flag: "info"
+  - intent: train_no
+  #- action: utter_train_info
+  - action: action_train_info
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye
+
+
+- story: ask for pnr status
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_pnr_status
+  - action: utter_ask_for_pnr_no
+  - intent: pnr_no
+  - action: action_pnr_status
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye
+
+- story:  direct pnr status
+  steps:
+  - intent: ask_pnr_status
+  - action: utter_ask_for_pnr_no
+  - intent: pnr_no
+  - action: action_pnr_status
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye
+
+- story:  else pnr status
+  steps:
+  - action: utter_else
+  - intent: ask_pnr_status
+  - action: utter_ask_for_pnr_no
+  - intent: pnr_no
+  - action: action_pnr_status
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye
+
+
+- story: direct train info
+  steps:
+  - intent: ask_train_info
+  - action: utter_ask_for_train_info
+  - action: set_info
+  - slot_was_set:
+      - flag: "info"
+  - intent: train_no
+  #- action: utter_train_info
+  - action: action_train_info
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye
+
+- story: direct train info from else
+  steps:
+  - action: utter_else
+  - intent: ask_train_info
+  - action: utter_ask_for_train_info
+  - action: set_info
+  - slot_was_set:
+      - flag: "info"
+  - intent: train_no
+  #- action: utter_train_info
+  - action: action_train_info
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye
+
+
+- story: ask for schedule
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_for_train_schedule
+  - action: set_schedule
+  - slot_was_set:
+      - flag: "schedule"
+  - intent: train_no
+  #- action: utter_train_info
+  - action: action_train_info
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye
+
+
+- story: direct schedule
+  steps:
+  - intent: ask_schedule
+  - action: utter_ask_for_train_schedule
+  - action: set_schedule
+  - slot_was_set:
+      - flag: "schedule"
+  - intent: train_no
+  #- action: utter_train_info
+  - action: action_train_info
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye
+
+- story: direct schedule from else
+  steps:
+  - action: utter_else
+  - intent: ask_schedule
+  - action: utter_ask_for_train_schedule
+  - action: set_schedule
+  - slot_was_set:
+      - flag: "schedule"
+  - intent: train_no
+  #- action: utter_train_info
+  - action: action_train_info
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye
+
+
+- story: ask for train suggestion
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_train_suggest
+  - action: utter_ask_for_source
+  - intent: train_source
+  - action: utter_ask_for_destination
+  - intent: train_destination
+  - action: set_destination
+  - action: utter_train_suggestions
+  - action: action_train_suggestions
+  - action: utter_else
+  - intent: no_else
+  - action: utter_goodbye

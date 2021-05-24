@@ -1,0 +1,28 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: utter_else
+
+- rule: Say destination
+  steps:
+  - intent: train_source
+  - action: utter_ask_for_destination
+  
+
+- rule: Say pnr status
+  steps:
+  - intent: pnr_no
+  - action: action_pnr_status
+  - action: utter_else
+
+

@@ -1,0 +1,98 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - bot_challenge
+  - ask_train_info
+  - ask_schedule
+  - train_no
+  - no_else
+  - ask_train_suggest
+  - train_source
+  - ask_pnr_status
+  - pnr_no
+  - train_destination
+
+entities:
+  - trainNo
+  - source
+  - flag
+  - pnrNo
+
+
+slots:
+  trainNo:
+    type: text
+    auto_fill: true
+  pnrNo:
+    type: text
+    auto_fill: true
+  source:
+    type: text
+    auto_fill: true
+  destination:
+    type: text
+  flag:
+    type: text
+    
+  
+  
+
+actions:
+- action_train_suggestions
+- action_train_info
+- action_pnr_status
+- set_info
+- set_schedule
+- set_destination
+
+
+responses:
+ 
+  utter_greet:
+  - text: "Hey , I am your Railway chatbot , What can I do for you?"
+
+  utter_ask_for_train_info:
+  - text: "Which train info you are looking for?"
+
+  utter_ask_for_pnr_no:
+  - text: "Can you tell me your Pnr No"
+
+  utter_ask_for_train_schedule:
+  - text: "Which train schedule you are looking for?"
+
+  utter_ask_for_source:
+  - text: "plz tell the source"
+
+  utter_ask_for_destination:
+  - text: "plz tell the destination"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Thank you for using Railway chatbot , Have a nice day."
+
+  utter_iamabot:
+  - text: "I am your Railway chatbot."
+
+  utter_else:
+  - text: "What else i can do for you?"
+
+  utter_train_info:
+  - text: "Train info is ..... Train No : {pnrNo}"
+
+  utter_schedule:
+  - text: "Train schedule is .....Train No : {trainNo}"
+
+  utter_train_suggestions:
+  - text: "source is  {source} Destination is {destination}"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

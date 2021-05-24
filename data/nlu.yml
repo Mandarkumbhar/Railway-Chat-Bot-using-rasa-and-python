@@ -1,0 +1,169 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+
+
+- intent: ask_train_info
+  examples: |
+    - can you tell the train info?
+    - could you tell me train info?
+    - i need train info
+    - train info?
+    - train info plz
+    - i want train info
+
+- intent: ask_pnr_status
+  examples: |
+    - can you tell the pnr status?
+    - could you tell me pnr status?
+    - i need pnr status
+    - pnr status?
+    - pnr status plz
+    - tell me my pnr status
+
+- intent: ask_schedule
+  examples: |
+    - can you tell the schedule of a train?
+    - could you tell me train schedule?
+    - i need to known schedule
+    - schedule?
+    - schedule plz
+    - i want to known schedule
+
+- intent: train_no
+  examples: |
+    - train no [21035](trainNo)
+    - train no [11111](trainNo)
+    - train no [22222](trainNo)
+    - train no [33333](trainNo)
+    - train no [3333](trainNo)
+    - train no [333](trainNo)
+    - train no [12357](trainNo)
+    - train no [33333](trainNo)
+    - train no [99999](trainNo)
+    - train no [333](trainNo)
+    - train no [12358](trainNo)
+ 
+
+- regex: pnrNo
+  examples: |
+    - \d{10}
+
+
+- intent: pnr_no
+  examples: |
+    - [9999999999](pnrNo)
+    - [3123456789](pnrNo)
+    - [5632563125](pnrNo)
+    - [5632563125](pnrNo)
+    - [5634562125](pnrNo)
+    - [5632568125](pnrNo)
+    - [8932563125](pnrNo)
+    - [2232563125](pnrNo)
+    - [1432563125](pnrNo)
+    - [9632563125](pnrNo)
+    - [7532563125](pnrNo)
+    - [3432563125](pnrNo)
+    
+    
+- intent: train_source
+  examples: |
+   - from [karmali](source)
+   - from [mumbai](source)
+   - from [Nagpur](source) 
+   - from [pune](source) 
+   - from [Jaipur JN](source) 
+   - from [Mumbai central](source) 
+   - from [Bandra](source)
+   - from [Aurangabad](source) 
+   - from [Hyderabad](source) 
+   - from [nashik](source)
+
+- intent: train_destination
+  examples: |
+   - Nagpur
+   - nashik
+   - pune
+   - Nagpur
+   - nashik
+   - pune
+   - Nagpur
+   - nashik
+   - pune
+   
+
+
+
+- intent: ask_train_suggest
+  examples: |
+    - i want you to suggest me train
+    - can u suggest me any train
+    - i want to plan a journey
+    - i am looking for train
+    - suggest me train
+    - available train?
+    - can you tell the available train?
+ 
+
+
+
+
+
+
+- intent: no_else
+  examples: |
+    - nothing else
+    - no i am good
+    - thank you
+    - thank you for your help
+    - no
+  
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+    - who am i talking to?
+    - tell me about yourself
